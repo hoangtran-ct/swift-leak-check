@@ -51,9 +51,10 @@ public struct FunctionSignature {
     guard funcName == functionCallExpr.symbol?.text else {
       return .nameMismatch
     }
-    
-    print("Debug: \(functionCallExpr)")
-    
+
+    #if DEBUG
+      print("Debug: \(functionCallExpr)")
+    #endif
     return match((ArgumentListWrapper(functionCallExpr.argumentList), functionCallExpr.trailingClosure))
   }
   
