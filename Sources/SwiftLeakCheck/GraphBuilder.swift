@@ -62,13 +62,6 @@ fileprivate final class GraphBuilderVistor: BaseGraphVistor {
         stack.push(scope)
       }
     }
-
-
-    #if DEBUG
-      if node.is(IfStmtSyntax.self) || node.is(CodeBlockSyntax.self) {
-        assertionFailure("Unhandled case")
-    }
-    #endif
     
     return super.visitAny(node)
   }
