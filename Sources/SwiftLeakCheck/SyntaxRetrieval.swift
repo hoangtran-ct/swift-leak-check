@@ -9,6 +9,7 @@
 //
 
 import SwiftSyntax
+import SwiftSyntaxParser
 
 public enum SyntaxRetrieval {
   public static func request(content: String) throws -> SourceFileSyntax {

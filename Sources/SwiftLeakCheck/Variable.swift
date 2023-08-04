@@ -192,8 +192,7 @@ public class Variable: Hashable, CustomStringConvertible {
   }
   
   public static func from(_ node: OptionalBindingConditionSyntax, scope: Scope) -> Variable? {
-    if let left = node.pattern.as(IdentifierPatternSyntax.self) {
-      let right = node.initializer.value
+      if let left = node.pattern.as(IdentifierPatternSyntax.self), let right = node.initializer?.value {
       let type: TypeInfo
       if let typeAnnotation = node.typeAnnotation {
         type = .exact(typeAnnotation.type)

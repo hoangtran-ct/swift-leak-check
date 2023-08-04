@@ -40,6 +40,7 @@ private final class LeakSyntaxVisitor: BaseGraphVistor {
     self.sourceLocationConverter = sourceLocationConverter
     self.nonEscapeRules = nonEscapeRules
     self.onLeakDetected = onLeakDetected
+    super.init(viewMode: .sourceAccurate)
   }
   
   override func visit(_ node: IdentifierExprSyntax) -> SyntaxVisitorContinueKind {

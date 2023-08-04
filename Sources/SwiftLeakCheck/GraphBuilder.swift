@@ -26,23 +26,23 @@ final class GraphBuilder {
 }
 
 class BaseGraphVistor: SyntaxAnyVisitor {
-  override func visit(_ node: UnknownDeclSyntax) -> SyntaxVisitorContinueKind {
+  override func visit(_ node: MissingDeclSyntax) -> SyntaxVisitorContinueKind {
     return .skipChildren
   }
   
-  override func visit(_ node: UnknownExprSyntax) -> SyntaxVisitorContinueKind {
+  override func visit(_ node: MissingExprSyntax) -> SyntaxVisitorContinueKind {
     return .skipChildren
   }
   
-  override func visit(_ node: UnknownStmtSyntax) -> SyntaxVisitorContinueKind {
+  override func visit(_ node: MissingStmtSyntax) -> SyntaxVisitorContinueKind {
     return .skipChildren
   }
   
-  override func visit(_ node: UnknownTypeSyntax) -> SyntaxVisitorContinueKind {
+  override func visit(_ node: MissingTypeSyntax) -> SyntaxVisitorContinueKind {
     return .skipChildren
   }
   
-  override func visit(_ node: UnknownPatternSyntax) -> SyntaxVisitorContinueKind {
+  override func visit(_ node: MissingPatternSyntax) -> SyntaxVisitorContinueKind {
     return .skipChildren
   }
 }
@@ -62,13 +62,13 @@ fileprivate final class GraphBuilderVistor: BaseGraphVistor {
         stack.push(scope)
       }
     }
-    
+
+
     #if DEBUG
-    if node.is(ElseBlockSyntax.self) || node.is(ElseIfContinuationSyntax.self) {
-      assertionFailure("Unhandled case")
+      if node.is(IfStmtSyntax.self) || node.is(CodeBlockSyntax.self) {
+        assertionFailure("Unhandled case")
     }
     #endif
-    
     
     return super.visitAny(node)
   }
@@ -182,6 +182,7 @@ private final class ReferenceBuilderVisitor: BaseGraphVistor {
   private let graph: GraphImpl
   init(graph: GraphImpl) {
     self.graph = graph
+    super.init(viewMode: .sourceAccurate)
   }
   
   override func visit(_ node: IdentifierExprSyntax) -> SyntaxVisitorContinueKind {
