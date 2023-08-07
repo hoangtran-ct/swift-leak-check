@@ -20,7 +20,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-syntax", .exact("508.0.0")),
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "SwiftLeakChecker",
             dependencies: [
                 "SwiftLeakCheck",

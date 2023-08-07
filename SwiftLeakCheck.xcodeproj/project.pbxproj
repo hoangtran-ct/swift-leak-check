@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3389B12F2A81A0FE00864D6D /* SnapKitMakeConstraintsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3389B12E2A81A0FE00864D6D /* SnapKitMakeConstraintsRule.swift */; };
 		FC463C4525D18AFE00E95949 /* DispatchQueue in Resources */ = {isa = PBXBuildFile; fileRef = FC463C3825D18AEC00E95949 /* DispatchQueue */; };
 		FC463C5625D18B0700E95949 /* EscapingAttribute in Resources */ = {isa = PBXBuildFile; fileRef = FC463C3F25D18AEC00E95949 /* EscapingAttribute */; };
 		FC463C5725D18B0700E95949 /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = FC463C4025D18AEC00E95949 /* Extensions */; };
@@ -191,6 +192,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3389B12E2A81A0FE00864D6D /* SnapKitMakeConstraintsRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKitMakeConstraintsRule.swift; sourceTree = "<group>"; };
 		FC463C3725D18AEC00E95949 /* Leak1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Leak1; path = Snippets/Leak1; sourceTree = "<group>"; };
 		FC463C3825D18AEC00E95949 /* DispatchQueue */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DispatchQueue; path = Snippets/DispatchQueue; sourceTree = "<group>"; };
 		FC463C3925D18AEC00E95949 /* IfElse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = IfElse; path = Snippets/IfElse; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		OBJ_18 /* NonEscapeRules */ = {
 			isa = PBXGroup;
 			children = (
+				3389B12E2A81A0FE00864D6D /* SnapKitMakeConstraintsRule.swift */,
 				OBJ_19 /* CollectionRules.swift */,
 				OBJ_20 /* DispatchQueueRule.swift */,
 				OBJ_21 /* ExprSyntaxPredicate.swift */,
@@ -771,6 +774,7 @@
 				OBJ_123 /* UIViewAnimationRule.swift in Sources */,
 				OBJ_124 /* UIViewControllerAnimationRule.swift in Sources */,
 				OBJ_125 /* Scope.swift in Sources */,
+				3389B12F2A81A0FE00864D6D /* SnapKitMakeConstraintsRule.swift in Sources */,
 				OBJ_126 /* SourceFileScope.swift in Sources */,
 				OBJ_127 /* Stack.swift in Sources */,
 				OBJ_128 /* SwiftSyntax+Extensions.swift in Sources */,

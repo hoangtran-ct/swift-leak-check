@@ -37,7 +37,8 @@ do {
       leakDetector.nonEscapeRules = [
         UIViewAnimationRule(),
         UIViewControllerAnimationRule(),
-        DispatchQueueRule()
+        DispatchQueueRule(),
+        SnapKitMakeConstraintsRule()
         ] + CollectionRules.rules
       
       let startDate = Date()

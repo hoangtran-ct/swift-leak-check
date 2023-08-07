@@ -63,7 +63,11 @@ final class LeakDetectorTests: XCTestCase {
   func testExtensions() {
     verify(fileName: "Extensions")
   }
-  
+
+  func testSnapKit() {
+    verify(fileName: "SnapKit")
+  }
+
   private func verify(fileName: String, extension: String? = nil) {
     do {
       guard let url = bundle.url(forResource: fileName, withExtension: `extension`) else {
@@ -92,7 +96,8 @@ final class LeakDetectorTests: XCTestCase {
       leakDetector.nonEscapeRules = [
         UIViewAnimationRule(),
         UIViewControllerAnimationRule(),
-        DispatchQueueRule()
+        DispatchQueueRule(),
+        SnapKitMakeConstraintsRule()
         ] + CollectionRules.rules
       
       let leaks = try leakDetector.detect(content: content)
