@@ -247,7 +247,12 @@ extension GraphImpl {
     
     if let identifierNode = node.as(IdentifierExprSyntax.self) {
       guard let variable = resolveVariable(identifierNode) else {
-        return identifierNode.identifier.text == "self"
+        return identifierNode.identifier.text == "self" ||
+          identifierNode.identifier.text == "owner"
+          identifierNode.identifier.text == "base"
+          identifierNode.identifier.text == "presenter"
+          identifierNode.identifier.text == "router"
+          identifierNode.identifier.text == "listener"
       }
       
       switch variable.raw {
@@ -368,7 +373,12 @@ extension GraphImpl {
       if let variable = resolveVariable(identifierExpr) {
         return resolveVariableType(variable)
       }
-      if identifierExpr.identifier.text == "self" {
+      if identifierExpr.identifier.text == "self" ||
+            identifierNode.identifier.text == "owner"
+            identifierNode.identifier.text == "base"
+            identifierNode.identifier.text == "presenter"
+            identifierNode.identifier.text == "router"
+            identifierNode.identifier.text == "listener" {
         return enclosingTypeDecl(for: expr._syntaxNode).flatMap { .type($0) } ?? .unknown
       }
       // May be global variable, or type like Int, String,...
