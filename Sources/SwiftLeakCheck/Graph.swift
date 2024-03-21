@@ -248,10 +248,10 @@ extension GraphImpl {
     if let identifierNode = node.as(IdentifierExprSyntax.self) {
       guard let variable = resolveVariable(identifierNode) else {
         return identifierNode.identifier.text == "self" ||
-          identifierNode.identifier.text == "owner"
-          identifierNode.identifier.text == "base"
-          identifierNode.identifier.text == "presenter"
-          identifierNode.identifier.text == "router"
+          identifierNode.identifier.text == "owner" ||
+          identifierNode.identifier.text == "base" ||
+          identifierNode.identifier.text == "presenter" ||
+          identifierNode.identifier.text == "router" ||
           identifierNode.identifier.text == "listener"
       }
       
@@ -374,10 +374,10 @@ extension GraphImpl {
         return resolveVariableType(variable)
       }
       if identifierExpr.identifier.text == "self" ||
-            identifierExpr.identifier.text == "owner"
-            identifierExpr.identifier.text == "base"
-            identifierExpr.identifier.text == "presenter"
-            identifierExpr.identifier.text == "router"
+            identifierExpr.identifier.text == "owner" ||
+            identifierExpr.identifier.text == "base" ||
+            identifierExpr.identifier.text == "presenter" ||
+            identifierExpr.identifier.text == "router" ||
             identifierExpr.identifier.text == "listener" {
         return enclosingTypeDecl(for: expr._syntaxNode).flatMap { .type($0) } ?? .unknown
       }
