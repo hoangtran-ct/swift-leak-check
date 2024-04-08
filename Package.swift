@@ -17,7 +17,7 @@ let package = Package(
         .executable(name: "SwiftLeakChecker", targets: ["SwiftLeakChecker"])
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax", .exact("508.0.0")),
+        .package(url: "https://github.com/apple/swift-syntax", .exact("508.0.1")),
     ],
     targets: [
         .executableTarget(
