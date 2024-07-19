@@ -250,7 +250,7 @@ extension GraphImpl {
         return identifierNode.identifier.text == "self" ||
           identifierNode.identifier.text == "owner" ||
           identifierNode.identifier.text == "base" ||
-          identifierExpr.identifier.text == "viewModel" ||
+          identifierNode.identifier.text == "viewModel" ||
           identifierNode.identifier.text == "presenter" ||
           identifierNode.identifier.text == "router" ||
           identifierNode.identifier.text == "listener"
